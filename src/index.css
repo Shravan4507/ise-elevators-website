@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* ================================
+   GLOBAL STYLES
+   ================================ */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+}
+
+:root {
+  font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a1a1a;
+  background-color: #fcfcfc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #fcfcfc 100%);
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar - Cross Browser */
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ================================
+   GLOBAL TYPOGRAPHY
+   ================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================
+   GLOBAL COMPONENTS
+   ================================ */
+
+/* Section Badge (used across pages) */
+.section-badge {
+  background: rgba(0, 96, 199, 0.1);
+  color: #0060c7;
+  padding: 0.5rem 1.2rem;
+  border-radius: 34px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Main Content Animation */
+.main-content {
+  -webkit-animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Global Contact Buttons */
+.btn-call,
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.btn-call {
+  background: linear-gradient(135deg, #0060c7 0%, #004a99 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 96, 199, 0.3);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ================================
+   ACCESSIBILITY EFFECT CLASSES
+   ================================ */
+
+/* High Contrast Mode */
+html.high-contrast,
+html.high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+html.high-contrast * {
+  border-color: #fff !important;
+}
+
+html.high-contrast a,
+html.high-contrast button {
+  color: #ffff00 !important;
+}
+
+/* Invert Colors */
+html.invert-colors {
+  -webkit-filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.invert-colors img,
+html.invert-colors video {
+  -webkit-filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Grayscale / Saturation */
+html.grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+/* Highlight Links */
+html.highlight-links a {
+  background: #ffff00 !important;
+  color: #000 !important;
+  padding: 2px 4px;
+  text-decoration: underline !important;
+}
+
+/* Font Size Increase */
+html.font-size-increase {
+  font-size: 120%;
+}
+
+/* Font Size Decrease */
+html.font-size-decrease {
+  font-size: 85%;
+}
+
+/* Text Spacing */
+html.text-spacing * {
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+/* Line Height Increase */
+html.line-height-increase * {
+  line-height: 2 !important;
+}
+
+/* Hide Images */
+html.hide-images img {
+  visibility: hidden;
+}
+
+/* Big Cursor */
+html.big-cursor,
+html.big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M7 2l12 11.5-5.5 1 3 6.5-2.5 1-3-6.5L7 19V2z'/%3E%3C/svg%3E"), auto !important;
+}
+
+/* ================================
+   MOBILE-SPECIFIC FIXES
+   ================================ */
+
+/* Prevent zoom on input focus (iOS) */
+@media screen and (max-width: 768px) {
+
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (pointer: coarse) {
+
+  button,
+  a,
+  input[type="submit"] {
+    min-height: 44px;
+  }
+}

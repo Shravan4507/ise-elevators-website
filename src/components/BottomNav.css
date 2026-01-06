@@ -1,0 +1,96 @@
+/* Bottom Navigation - Mobile Only */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 9998;
+    padding: 0.5rem 0;
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0));
+}
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* Add padding to body/footer for bottom nav */
+    body {
+        padding-bottom: 70px;
+    }
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    min-width: 60px;
+    transition: color 0.2s;
+}
+
+.bottom-nav-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-nav-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-nav-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+/* Active State */
+.bottom-nav-item.active {
+    color: #0060c7;
+}
+
+.bottom-nav-item.active .bottom-nav-icon {
+    transform: scale(1.1);
+}
+
+/* Quote Button Special Style */
+.bottom-nav-quote {
+    color: #0060c7;
+}
+
+.bottom-nav-quote .bottom-nav-icon {
+    background: linear-gradient(135deg, #0060c7 0%, #004a99 100%);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-top: -1rem;
+    box-shadow: 0 4px 12px rgba(0, 96, 199, 0.3);
+}
+
+.bottom-nav-quote .bottom-nav-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom-nav-quote .bottom-nav-label {
+    margin-top: 0.25rem;
+    color: #0060c7;
+    font-weight: 600;
+}
